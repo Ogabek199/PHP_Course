@@ -295,4 +295,29 @@ $isAdultAgeAnonymus = function(int $age): bool {
   return $age >= 18; 
 };
 var_dump($isAdultAgeAnonymus(10));
+
+#Array methods
+$cars = ['malibu', 'jentra', 'cobalt', 'lacetti', 'nexia'];
+#1 - array_push() arrayni oxiriga qo'shadi
+array_push($cars, 'tracker');
+#2 - array_pop() arrayni oxirgi elementini o'chiradi
+$carsDeleter = array_pop($cars);
+#3 - in_array() arrayda bor yoki yo‘qligini tekshiradi.
+if (in_array("Banan", $fruits, true)) {
+    echo "Banan mavjud" . "\n";
+} else {
+    echo "Banan mavjud emas" . "\n";
+}
+#4 - sort() va rsort() o‘sish yoki kamayish tartibida saralaydi ===> sort() — kichikdan kattaga ===> rsort() — kattadan kichikka;
+$numbers = [10, 40, 20, 50, 30];
+sort($numbers);
+rsort($numbers);
+print_r($numbers);
+#5 - array_filter() Shartga mos elementlarni ajratib oladi.
+$numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+$evenNumbers = array_filter($numbers, function ($number) {
+  return $number % 2 === 1;
+});
+print_r($evenNumbers);
+print_r($cars)
 ?>
